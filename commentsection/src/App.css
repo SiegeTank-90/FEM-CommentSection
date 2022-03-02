@@ -1,0 +1,103 @@
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.commentBox {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  
+}
+.commentBoxAlt {
+  display: none
+  
+}
+
+.profileimg{
+  max-width: 25px;
+}
+
+.replyButton{
+  display: flex;
+  align-items: center;
+}
+.replyButton:hover {
+  opacity: .8;
+}
+.replyLine {
+  border-left : solid hsla(211, 10%, 45%, 0.33) 1px;
+
+}
+
+.textPrimaryBold {
+  color: hsl(238, 40%, 52%);
+  font-weight: 700;
+}
+
+.textAlternateBold{
+  color: hsl(211, 10%, 45%);
+  font-weight: 700;
+  opacity: .8;
+}
+.textAlternate{
+  color: hsl(211, 10%, 45%);
+  font-weight: 500;
+  opacity: .8;
+}
+
+.voteCounter {
+  margin-bottom: 0;
+  text-align: center;
+
+}
+
+.voteButton {
+  background-color:  hsl(228, 33%, 97%) ;
+  border-radius: 10px;
+  border: none; 
+  text-align: center;
+  padding: 5px;
+  min-width: 20px;
+}
+.hidden {
+  visibility: hidden;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+  .voteButton {
+    display : None
+  }
+
+  .voteButtonAlt {
+    display: flex;
+    max-width: 75px;
+  }
+
+  .commentBox {
+    display: none;
+    
+  }
+
+  .replyLine {
+    border : none;
+  
+  }
+
+  .replyContent {
+
+  }
+
+
+  .commentBoxAlt {
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;  
+    
+  }
+
+
+}
