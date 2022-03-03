@@ -1,0 +1,668 @@
+Body {
+  background-size: 4000px 2000px;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  
+}
+a {
+  text-decoration: none;
+  color: white !important;
+}
+a :hover {
+  color: white;
+}
+
+a :focus {
+  color: white;
+}
+
+/* ******BACKGROUNDS********* */
+
+.HomeBackgroundDesktop{
+  background-image: url("./assets/home/background-home-desktop.jpg");
+}
+.HomeBackgroundTablet{
+  background-image: url("./assets/home/background-home-tablet.jpg");
+  background-size: 1000px 1200px;
+}
+.HomeBackgroundMobile{
+  background-image: url("./assets/home/background-home-mobile.jpg");
+  background-size: 400px 600px;
+}
+
+.CrewBackgroundDesktop{
+  background-image: url("./assets/crew/background-crew-desktop.jpg");
+}
+.CrewBackgroundTablet{
+  background-image: url("./assets/crew/background-crew-tablet.jpg");
+  background-size: 1000px 1200px;
+}
+.CrewBackgroundMobile{
+  background-image: url("./assets/crew/background-crew-mobile.jpg");
+  background-size: 400px 600px;
+}
+
+.DestinationBackgroundDesktop{
+  background-image: url("./assets/destination/background-destination-desktop.jpg");
+}
+.DestinationBackgroundTablet{
+  background-image: url("./assets/destination/background-destination-tablet.jpg");
+  background-size: 1000px 1200px;
+}
+.DestinationBackgroundMobile{
+  background-image: url("./assets/destination/background-destination-mobile.jpg");
+  background-size: 400px 600px;
+}
+
+.TechnologyBackgroundDesktop{
+  background-image: url("./assets/technology/background-technology-desktop.jpg");
+}
+.TechnologyBackgroundTablet{
+  background-image: url("./assets/technology/background-technology-tablet.jpg");
+  background-size: 1000px 1200px;
+}
+.TechnologyBackgroundMobile{
+  background-image: url("./assets/technology/background-technology-mobile.jpg");
+  background-size: 400px 600px;
+}
+
+/* ******BACKGROUNDS********* */
+
+h1 {
+  font-size: 9.375em;
+  font-family: "Bellefair", sans-serif;
+}
+h2 {
+  font-size: 6.25em;
+  font-family: "Bellefair", sans-serif;
+}
+h3 {
+  font-size: 3.5em;
+  font-family: "Bellefair", sans-serif;
+}
+h4 {
+  font-size: 2em;
+  font-family: "Bellefair", sans-serif;
+}
+h5 {
+  font-size: 2em;
+  letter-spacing: 4.75px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+h6 {
+  font-size: 1.5em;
+  letter-spacing: 4.75px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.pageContainer {
+  margin: 0 15%;
+}
+.destinationTextContainer {
+  padding-bottom: 15%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+.crewHeader {
+  opacity: 0.6;
+}
+
+.crewHeader,
+.crewName,
+.crewBody {
+  width: 100%;
+}
+
+.crewImgContainer {
+  width: 50%;
+  text-align: right;
+  display: inline-block;
+}
+.crewTabs {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 15px;
+}
+.crewTabs-active {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 15px;
+  background-color: white;
+}
+
+.crewTabContainers {
+  padding: 25% 25%;
+}
+
+.crewTextContainer {
+  width: 50%;
+  display: inline-block;
+}
+
+.crewImg {
+  max-width: fit-content;
+}
+.exploreButton {
+  min-width: 400px;
+  min-height: 400px;
+  border-radius: 400px;
+  background-color: white;
+  position: absolute;
+  left: 25%;
+  top: 50%;
+}
+.exploreHover :hover {
+  box-shadow: 1px 1px 0px 100px rgba(255, 255, 255, 0.25);
+}
+
+.exploreContainer {
+  max-width: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.exploreButtonText {
+  color: black;
+  margin-top: 45%;
+}
+
+.hamburger-Closed {
+  display: inline-block;
+  padding: 15%;
+  min-width: 100px;
+}
+.hamburger-Open {
+  display: inline-block;
+  padding: 15%;
+  min-width: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.MainPageText {
+  padding: 10%;
+}
+
+.index {
+  z-index: 0;
+}
+
+.NavText {
+  letter-spacing: 2.7px;
+}
+.navGloss {
+  backdrop-filter: blur(50px);
+}
+.nav-line {
+  background-color: rgba(208, 214, 249, 0.2);
+  height: 1px;
+}
+.navlogo {
+  min-width: 100px;
+}
+
+.NavItem {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.NavItem :hover {
+  border-bottom: 5px solid white !important;
+}
+
+.nav-item-hovered {
+  border-bottom: 5px solid white;
+}
+
+.noHover {
+  pointer-events: none;
+}
+
+.TechImgContainer {
+  display: inline-block;
+  width: 15%;
+  text-align: right;
+}
+
+.TechTextContainer {
+  width: 80%;
+  margin-right: 5%;
+  display: inline-block;
+}
+
+.TechTabsContainer {
+  width: 25%;
+  display: inline-block;
+}
+
+.TechTabs {
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100%;
+  height: 100px;
+  padding: 15px 35px;
+  margin-bottom: 50px;
+  display: block;
+}
+.TechTabs-active {
+  width: 100px;
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100%;
+  height: 100px;
+  padding: 15px 35px;
+  margin-bottom: 50px;
+  display: block;
+}
+
+.TextSummaryContainer {
+  width: 75%;
+  display: inline-block;
+}
+
+.selected-active {
+  color: white;
+  font-weight: 800;
+  border-bottom: 3px solid white;
+}
+
+.subHeading {
+  font-size: 1.75em;
+  font-family: "Barlow", sans-serif;
+}
+
+.subHeading2 {
+  font-size: 0.875em;
+  letter-spacing: 2.35px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.altColor {
+  color: rgba(208, 214, 249);
+}
+.primaryColor {
+  color: white;
+}
+
+.planetSize {
+  min-width: 500px;
+}
+
+.teriaryColor {
+  color: rgb(11, 13, 23);
+}
+
+.Menu-off {
+  display: none;
+}
+
+@media screen and (max-width: 1080px) {
+  .crewImgContainer {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: block;
+  }
+
+  .crewTextContainer {
+    width: 80%;
+    margin: auto;
+    display: block;
+  }
+
+  .hamburger-Open {
+    display: inline-block;
+    padding: 15%;
+    min-width: 100px;
+    margin-left: 65%;
+  }
+  .TechRowContainer {
+    padding: 0;
+    margin: 0;
+  }
+
+  .TechImgContainer {
+    display: block;
+  }
+  .TechTabsContainer {
+    width: 100%;
+    padding: 0 17.5%;
+  }
+  .TechTextContainer {
+    width: 100%;
+  }
+  .TextSummaryContainer {
+    text-align: center;
+    padding: 5% 15%;
+  }
+
+  .TechTabs {
+    margin: 5% 20px;
+    display: inline-block;
+  }
+
+  .TechTabs-active {
+    margin: 5% 20px;
+    display: inline-block;
+  }
+
+  .crewImg {
+    max-width: fit-content;
+  }
+
+  .pageContainer {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 9.375em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h2 {
+    font-size: 6.25em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h3 {
+    font-size: 3.5em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h4 {
+    font-size: 2em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h5 {
+    font-size: 1.5em;
+    letter-spacing: 4.75px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+
+  h6 {
+    font-size: 1em;
+    letter-spacing: 4.75px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+
+  .NavItem-mobile {
+    font-family: "Barlow", sans-serif;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    padding-right: 10%;
+    font-size: 3em;
+    display: block;
+  }
+
+  .NavItem-mobile:hover {
+    border-right: 10px solid white;
+  }
+
+  .Menu-Open {
+    backdrop-filter: blur(25px);
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+    left: 25%;
+    height: 125%;
+    width: 75%;
+    animation: slideIn 1s 1;
+  }
+  .Menu-Closed {
+    backdrop-filter: blur(25px);
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    height: 125%;
+    width: 75%;
+    animation: slideOut 1s 1;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(200%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0%);
+      left: 25%;
+    }
+
+    to {
+      transform: translateX(200%);
+      left: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .destinationContainer {
+    margin: 0;
+  }
+
+  .hamburger-Closed {
+    display: inline-block;
+    padding: 15%;
+    min-width: 75px;
+  }
+
+  .TechTabs {
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: .75em;
+  }
+
+  .TechTabs-active {
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: .75em;
+  }
+ 
+
+  .NavItem-mobile {
+    font-size: 2.5em;
+  }
+
+  h1 {
+    font-size: 9.375em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h2 {
+    font-size: 6.25em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h3 {
+    font-size: 3.5em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h4 {
+    font-size: 2em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h5 {
+    font-size: 1.5em;
+    letter-spacing: 4.75px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+
+  h6 {
+    font-size: 0.75em;
+    letter-spacing: 4.75px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 3.5em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h2 {
+    font-size: 3.5em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h3 {
+    font-size: 2em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h4 {
+    font-size: 2em;
+    font-family: "Bellefair", sans-serif;
+  }
+  h5 {
+    font-size: 1em;
+    letter-spacing: 0.25px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+  h6 {
+    font-size: 0.5em;
+    letter-spacing: 4.75px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+
+  .subHeading {
+    font-family: "Barlow", sans-serif;
+  }
+
+  .subHeading2 {
+    letter-spacing: 2.35px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+
+  .crewImg {
+    max-width: 200px;
+  }
+  .destinationContainer {
+    margin: 0;
+  }
+
+  .MainPageText {
+    padding: 10%;
+    text-align: center;
+  }
+
+  .NavItem-mobile {
+    font-family: "Barlow", sans-serif;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    padding-right: 10%;
+    font-size: 1em;
+    display: block;
+  }
+
+  .NavItem-mobile:hover {
+    border-right: 5px solid white;
+  }
+  .pageHeader {
+    font-size: 0.75em;
+    letter-spacing: 4.75px;
+  }
+  .crewImgContainer {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .crewTabs {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+  }
+  .crewTabs-active {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 5px;
+  }
+
+  .exploreButton {
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 100%;
+     }
+
+  .hamburger-Closed {
+    margin-top: 25px;
+    margin-right: 50px;
+    min-width: 25px;
+  
+  }
+  .hamburger-Open {
+    margin-top: 25px;
+    margin-right: 25px;
+    min-width: 25px;
+  }
+
+  .navlogo {
+    margin: 25px 5px 25px;
+    min-width: 25px;
+    width: 25px;
+  }
+
+  .planetSize {
+    align-self: center;
+    min-width: 250px;
+  }
+  .TechTextContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .TechTabsContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .TechTabs {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.3em;
+  }
+
+  .TechTabs-active {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.3em;
+  }
+  .TechTabsTextLoc {
+    margin-top: 10px !important ;
+  }
+
+  .TextSummaryContainer {
+    width: 100%;
+  }
+  .TechImgContainer {
+    margin: 0;
+    padding: 0;
+  }
+  .imgSize {
+    max-width: 375px;
+  }
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+}

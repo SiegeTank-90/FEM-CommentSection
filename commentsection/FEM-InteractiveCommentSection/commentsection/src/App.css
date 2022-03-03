@@ -1,25 +1,6 @@
-body {
-  font-family: "Rubik", serif
-}
-
-
 button {
   border: none;
   background-color: transparent;
-}
-
-.bigReplyButton {
-  background-color:  hsl(238, 40%, 52%);
-  color: white;
-  border-radius: 5%;
-  width : 125px;
-  height : 50px;
-  margin-top: 2.5%;
-  vertical-align: top;
-}
-.bigReplyButton:hover {
-  background-color: hsl(223, 19%, 93%);
-
 }
 
 .commentBox {
@@ -37,17 +18,9 @@ button {
   max-width: 25px;
 }
 
-.replyProfileimg {
-  margin: 25 5 25;
-  max-width: 50px;
-  vertical-align: top;
-  margin: 2.5%;
-}
-
 .replyButton{
   display: flex;
   align-items: center;
-  background-color: white;
 }
 .replyButton:hover {
   opacity: .8;
@@ -92,29 +65,6 @@ button {
 
 }
 
-.replyBox {
-  background-color: white;
-  border-radius: 5px;
-}
-
-.replyContentBox {
-  border: solid 1px hsl(239, 57%, 85%);
-  border-radius: 5px;
-  color : hsl(211, 10%, 45%);
-  width:  66%;
-  min-height: 10%;
-  background-color: white;
-  padding: 1rem;
-  margin: 2rem;
-  resize: none;
-  
-}
-
-.repliedUser {
-  color : hsl(238, 40%, 52%);
-  font-weight: 800;
-}
-
 
 @media only screen and (max-width: 768px) {
   .voteButton {
@@ -133,17 +83,11 @@ button {
 
   .replyLine {
     border : none;
-   }
-   
-   .bigReplyButton {
-    background-color:  hsl(238, 40%, 52%);
-    color: white;
-    border-radius: 5%;
-    width : 125px;
-    height : 50px;
-    vertical-align: center;
-    margin: 0% 0% 5% 35%;
-    
+  
+  }
+
+  .replyContent {
+
   }
 
 
@@ -154,20 +98,6 @@ button {
     padding: 1rem;  
     
   }
-  .replyProfileimg {
-    margin: 0% 7.5%;
-    max-width: 50px;
-    vertical-align: center;
-
-  }
-
-  .replyContentBox {
-    width:  85%;
-    
-  }
-
-
 
 
 }
-
