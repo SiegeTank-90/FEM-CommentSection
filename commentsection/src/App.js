@@ -1,16 +1,19 @@
 import "./App.css";
 import React, { useState } from "react";
 import CommentBox from "./Components/commentBox";
-import CreateReply from "./createReply";
+
 
 
 function App(props) {
   const { json } = props;
   var { currentUser, comments } = json;
+ 
 
   comments.sort(function (a, b) {
     return a.score > b.score;
   });
+  
+ 
 
   function mapCommentSection(props) {
     const startReplies = props.replies.map((reply) => (
@@ -20,6 +23,7 @@ function App(props) {
         content={reply.content}
         createdAt={reply.createdAt}
         score={reply.score}
+        replyingTo={reply.replyingTo}
         username={reply.user.username}
         image={reply.user.image.png}
       />
@@ -34,6 +38,7 @@ function App(props) {
             createdAt={props.createdAt}
             score={props.score}
             username={props.user.username}
+            replyingTo={props.replyingTo}
             image={props.user.image.png}
           />
           <div className="row justify-content-start">
