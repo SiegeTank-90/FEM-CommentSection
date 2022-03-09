@@ -22,9 +22,15 @@ button {
 
 }
 
+.container {
+  position: relative;
+}
+
+
+
 .commentBox {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 1rem;
   
 }
@@ -32,6 +38,63 @@ button {
   display: none
   
 }
+.delete {
+  color: hsl(358, 79%, 66%);
+  font-size: 1.15rem;
+}
+
+.delete:hover {
+  opacity: 50%;
+
+}
+
+.modal-frame {
+    padding: 5%;
+    margin: 25%;
+    border-radius: 15px;
+    width: 50%;
+    height: 25%;
+}
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0,0,0, 0.25);
+
+}
+
+
+.modal-title {
+  font-weight: 800;
+
+}
+.modal-body {
+  font-weight: 400;
+}
+.modal-button-negative {
+  font-weight: 800;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  color: white;
+  padding: 25px;
+  background-color: hsl(211, 10%, 45%);
+}
+.modal-button-positive {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 5px;
+  padding: 25px;
+  background-color: hsl(358, 79%, 66%);
+}
+
+
+
+
 
 .profileimg{
   max-width: 25px;
@@ -170,4 +233,3 @@ button {
 
 
 }
-

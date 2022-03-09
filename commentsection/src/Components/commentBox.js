@@ -20,18 +20,30 @@ function CommentBox(props) {
   }
 
   function SaveNewReply(replyMessage) {
+    let NewCommentId = props.idkeys.at(props.idkeys.length - 1) + 1;
+    props.idkeys.push(NewCommentId);
     setNewReply(
       <CommentBox
-        key={props.id}
-        currentUser={currentUser}
+        idkeys={props.idkeys}
+        key={NewCommentId}
+        id={NewCommentId}
+        user={currentUser}
         image={currentUser.image.png}
         content={replyMessage}
         replyingTo={props.username}
         username={currentUser.username}
+        setIsModalVisible={props.setIsModalVisible}
+        setCommentIdKey={props.setCommentIdKey}
         createdAt={"Today"}
         score={0}
       />
     );
+  }
+
+  function deleteCommentConfirmation(id) {
+    props.setIsModalVisible(true);
+    props.setCommentIdKey(id);
+   
   }
 
   const [NewReply, setNewReply] = useState("");
@@ -40,7 +52,7 @@ function CommentBox(props) {
   let username = props.username;
   let currentUser = props.user;
   let replyFor = props.replyingTo;
-  let deleteComment = "hidden";
+  let deleteCommentButton = "hidden";
   let userReply = [username, currentUser, SaveNewReply];
   let repliedUser = undefined;
 
@@ -48,11 +60,12 @@ function CommentBox(props) {
     repliedUser = "@" + props.replyingTo + " ";
   }
 
-  // if ( currentUser.username == props.username) {
-  //     deleteComment = ""
-  // }
+  if (currentUser.username == props.username) {
+    deleteCommentButton = "";
+  }
 
   let window = useWindowDimension().width;
+
   if (window < 769) {
     return (
       <div>
@@ -71,10 +84,18 @@ function CommentBox(props) {
             </div>
 
             <div className="row col-12 position-relative">
-              <div className="col-9">
+              <div className="col-6">
                 <VoteButton votes={props.score} />
               </div>
-              <div className="col-3">
+              <button
+                className={"col-4 delete " + deleteCommentButton}
+                onClick={() => deleteCommentConfirmation(props.id)}
+              >
+                <span className="">
+                  <img className="" src="./images/icon-delete.svg" /> Delete
+                </span>{" "}
+              </button>
+              <div className="col-1">
                 <ReplyAction NewReplyButton={() => CreateNewReply(userReply)} />
               </div>
             </div>
@@ -95,14 +116,22 @@ function CommentBox(props) {
                 <VoteButton votes={props.score} />
               </div>
               <div className="col-11 row justify-content-start mb-1">
-                <div className="col-8">
+                <div className="col-7">
                   <ProfileSection
                     image={props.image}
                     username={props.username}
                     createdAt={props.createdAt}
                   />
                 </div>
-                <button className={"col-2 " + deleteComment}>Delete</button>
+                <button
+                  className={"col-3 delete " + deleteCommentButton}
+                  onClick={() => deleteCommentConfirmation(props.id)}
+                >
+                  <span className="p-3">
+                    <img className="p-1" src="./images/icon-delete.svg" />{" "}
+                    Delete
+                  </span>{" "}
+                </button>
                 <div className="col-2">
                   <ReplyAction
                     NewReplyButton={() => CreateNewReply(userReply)}
