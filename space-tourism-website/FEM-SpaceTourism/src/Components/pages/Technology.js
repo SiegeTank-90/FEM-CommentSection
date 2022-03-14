@@ -12,8 +12,8 @@ function Technology(props) {
   let backgroundSize = ""
   let documentWidth = useWindowDimensions().width
 
-  if (documentWidth < 375 ) {
-    backgroundSize = "TechnologyBackgroundMobile"
+  if (documentWidth < 500 ) {
+      backgroundSize = "TechnologyBackgroundMobile"
   } else  if (documentWidth  < 775 ) {
     backgroundSize = "TechnologyBackgroundTablet"
   } else {

@@ -1,4 +1,5 @@
 import React from "react";
+import CommentBox from "./commentBox";
 
 function Modal(props) {
   let visablity = "";
@@ -7,7 +8,13 @@ function Modal(props) {
     visablity = "hidden";
   }
 
-  console.log("my comment Id is " + props.findComment)
+
+  function deleteComment() {
+    if (2 in props.CommentSection) {
+      console.log("found " + props.findComment)
+    } else console.log("Failed")
+  }
+
 
 
   
@@ -32,7 +39,7 @@ function Modal(props) {
             </button>
             <button
               className="col-5 btn m-1 modal-button-positive"
-              onClick={() => console.log()}
+              onClick={() => deleteComment()}
             >
               Yes, Delete
             </button>

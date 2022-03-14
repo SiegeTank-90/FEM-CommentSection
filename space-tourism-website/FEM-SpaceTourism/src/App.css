@@ -424,12 +424,14 @@ h6 {
     height: 125%;
     width: 75%;
     animation: slideOut 1s 1;
+    display: none;
+   
   }
 
   @keyframes slideIn {
     from {
       transform: translateX(200%);
-    }
+          }
 
     to {
       transform: translateX(0%);
@@ -440,11 +442,14 @@ h6 {
     from {
       transform: translateX(0%);
       left: 25%;
+      display: block;
+    
     }
 
     to {
       transform: translateX(200%);
       left: 100%;
+      display: block;
     }
   }
 }
@@ -510,7 +515,7 @@ h6 {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   h1 {
     font-size: 3.5em;
     font-family: "Bellefair", sans-serif;
@@ -583,6 +588,9 @@ h6 {
     width: 10px;
     height: 10px;
     margin: 5px;
+  }
+  .container-fluid {
+    overflow: hidden;
   }
   .crewTabs-active {
     width: 10px;
@@ -659,7 +667,8 @@ h6 {
     padding: 0;
   }
   .imgSize {
-    max-width: 375px;
+    width: 375px;
+    overflow: none;
   }
   .row {
     margin: 0;

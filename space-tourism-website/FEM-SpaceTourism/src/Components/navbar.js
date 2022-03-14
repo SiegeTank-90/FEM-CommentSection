@@ -21,7 +21,7 @@ function NavBar() {
     <nav className="container-fluid">
       <div className="row NavText p-5">
         <div className="col-lg-1 p-2">
-          <Link to="/">
+          <Link to="FEM-SpaceTourisum">
             <img className="navlogo" alt="Navigation Logo" src={logo}></img>
           </Link>
         </div>
@@ -33,7 +33,7 @@ function NavBar() {
             className="p-5 col-3 NavItem"
             onMouseOver={HoverState}
             onMouseOut={HoverState}
-            to="/"
+            to="FEM-SpaceTourisum"
           >
             00 Home
           </Link>

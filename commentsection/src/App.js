@@ -56,7 +56,7 @@ function App(props) {
     );
   }
 
-  const StartingCommentSection = comments.map((comment) =>
+  let StartingCommentSection = comments.map((comment) =>
     mapCommentSection(comment)
   );
 
@@ -68,6 +68,7 @@ function App(props) {
         isVisible={isModalVisible}
         setIsVisible={setIsModalVisible}
         findComment={commentIdKey}
+        CommentSection={CommentSection}
        />
       <ul>{CommentSection}</ul>
     </div>
