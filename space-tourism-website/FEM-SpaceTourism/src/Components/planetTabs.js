@@ -2,27 +2,27 @@ import React from "react";
 
 function PlanetTabs(props) {
   let tabsArray = [
-    <h5 className="col-3 altColor p-1" onClick={props.Find}>
+    <h5 className="col-3 altColor p-1 pl planetTabsText" onClick={props.Find}>
       Moon
     </h5>,
-    <h5 className="col-3 altColor p-1" onClick={props.Find}>
+    <h5 className="col-3 altColor p-1 planetTabsText" onClick={props.Find}>
       Mars
     </h5>,
 
-    <h5 className="col-3 altColor p-1" onClick={props.Find}>
+    <h5 className="col-3 altColor p-1 planetTabsText" onClick={props.Find}>
       Europa
     </h5>,
 
-    <h5 className="col-3 altColor p-1" onClick={props.Find}>
+    <h5 className="col-3 altColor p-1 planetTabsText" onClick={props.Find}>
       Titan
-    </h5>,
+    </h5>
   ];
 
   if (props.Selector === "Moon") {
     tabsArray.splice(
       0,
       1,
-      <h5 className="col-3 selected-active p-1" onClick={props.Find}>
+      <h5 className="col-3 selected-active p-1 planetTabsText" onClick={props.Find}>
         Moon
       </h5>
     );
@@ -30,7 +30,7 @@ function PlanetTabs(props) {
     tabsArray.splice(
       1,
       1,
-      <h5 className="col-3 selected-active p-1" onClick={props.Find}>
+      <h5 className="col-3 selected-active p-1 planetTabsText" onClick={props.Find}>
         Mars
       </h5>
     );
@@ -38,7 +38,7 @@ function PlanetTabs(props) {
     tabsArray.splice(
       2,
       1,
-      <h5 className="col-3 selected-active p-1" onClick={props.Find}>
+      <h5 className="col-3 selected-active p-1 planetTabsText" onClick={props.Find}>
         Europa
       </h5>
     );
@@ -46,11 +46,11 @@ function PlanetTabs(props) {
     tabsArray.splice(
       3,
       1,
-      <h5 className="col-3 selected-active p-1" onClick={props.Find}>
+      <h5 className="col-3 selected-active p-1 planetTabsText" onClick={props.Find}>
         Titan
       </h5>
     );
-  } 
+  }
 
   return <div className="row">{tabsArray}</div>;
 }

@@ -18,7 +18,7 @@ function NavBar() {
   }
 
   return (
-    <nav className="container-fluid">
+    <nav role="navigation" className="container-fluid">
       <div className="row NavText p-5">
         <div className="col-lg-1 p-2">
           <Link to="FEM-SpaceTourisum">
@@ -41,7 +41,7 @@ function NavBar() {
             className="p-5 col-3 NavItem"
             onMouseOver={HoverState}
             onMouseOut={HoverState}
-            to="Destination"
+            to="FEM-SpaceTourisum/Destination"
           >
             01 Destinations
           </Link>
@@ -49,7 +49,7 @@ function NavBar() {
             className="p-5 col-3 NavItem"
             onMouseOver={HoverState}
             onMouseOut={HoverState}
-            to="Crew"
+            to="FEM-SpaceTourisum/Crew"
           >
             02 Crew
           </Link>
@@ -57,7 +57,7 @@ function NavBar() {
             className="p-5 col-3 NavItem"
             onMouseOver={HoverState}
             onMouseOut={HoverState}
-            to="Technology"
+            to="FEM-SpaceTourisum/Technology"
           >
             03 Technology
           </Link>

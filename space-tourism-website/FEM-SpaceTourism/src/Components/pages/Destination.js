@@ -56,7 +56,7 @@ function Destination(props) {
   );
 
   return (
-    <div className="container-fluid">
+    <div role="main" className="container-fluid">
       <div className="justify-content-center row pageContainer">
         <h5 className="row m-5 pe-5 pageHeader">01 Pick Your Destination</h5>
         {Map}

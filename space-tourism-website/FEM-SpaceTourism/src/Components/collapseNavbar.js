@@ -20,7 +20,7 @@ function CollapseNavbar(props) {
   }
 
   return (
-    <nav>
+    <nav role="navigation">
       <div className="container-fluid index">
         <div className="row justify-content-between">
           <Link className="col-2" to="FEM-SpaceTourisum">
@@ -46,13 +46,13 @@ function CollapseNavbar(props) {
         <Link className="NavItem-mobile" to="FEM-SpaceTourisum">
           00 Home
         </Link>
-        <Link className="NavItem-mobile" to="Destination">
+        <Link className="NavItem-mobile" to="FEM-SpaceTourisum/Destination">
           01 Destinations
         </Link>
-        <Link className="NavItem-mobile" to="Crew">
+        <Link className="NavItem-mobile" to="FEM-SpaceTourisum/Crew">
           02 Crew
         </Link>
-        <Link className="NavItem-mobile" to="Technology">
+        <Link className="NavItem-mobile" to="FEM-SpaceTourisum/Technology">
           03 Technology
         </Link>
       </div>

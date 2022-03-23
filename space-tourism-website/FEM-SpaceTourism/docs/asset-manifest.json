@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/FEM-SpaceTourisum/static/css/main.26472200.css",
-    "main.js": "/FEM-SpaceTourisum/static/js/main.17e59938.js",
+    "main.css": "/FEM-SpaceTourisum/static/css/main.7442e3f7.css",
+    "main.js": "/FEM-SpaceTourisum/static/js/main.eb4ac084.js",
     "static/media/background-home-desktop.jpg": "/FEM-SpaceTourisum/static/media/background-home-desktop.cdf3864ecbfdf20e8c3b.jpg",
     "static/media/background-destination-desktop.jpg": "/FEM-SpaceTourisum/static/media/background-destination-desktop.468b922c69bf5499b4bc.jpg",
     "static/media/image-anousheh-ansari.webp": "/FEM-SpaceTourisum/static/media/image-anousheh-ansari.bb42b775ee0b12430f3a.webp",
@@ -30,11 +30,11 @@
     "static/media/logo.svg": "/FEM-SpaceTourisum/static/media/logo.565f7f2c0534403f11b71994f4311210.svg",
     "static/media/icon-close.svg": "/FEM-SpaceTourisum/static/media/icon-close.d47fda63cbd8b3fedbbc1b2a53f64470.svg",
     "static/media/icon-hamburger.svg": "/FEM-SpaceTourisum/static/media/icon-hamburger.5273efa7c50e96ef3e51e7a2b54048ce.svg",
-    "main.26472200.css.map": "/FEM-SpaceTourisum/static/css/main.26472200.css.map",
-    "main.17e59938.js.map": "/FEM-SpaceTourisum/static/js/main.17e59938.js.map"
+    "main.7442e3f7.css.map": "/FEM-SpaceTourisum/static/css/main.7442e3f7.css.map",
+    "main.eb4ac084.js.map": "/FEM-SpaceTourisum/static/js/main.eb4ac084.js.map"
   },
   "entrypoints": [
-    "static/css/main.26472200.css",
-    "static/js/main.17e59938.js"
+    "static/css/main.7442e3f7.css",
+    "static/js/main.eb4ac084.js"
   ]
 }

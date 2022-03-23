@@ -7,9 +7,9 @@ function Home(props) {
   let backgroundSize = ""
   let documentWidth = useWindowDimensions().width
 
-  if (documentWidth <= 375 ) {
+  if (documentWidth <= 500 ) {
     backgroundSize = "HomeBackgroundMobile"
-  } else  if (documentWidth  < 775 ) {
+  } else  if (documentWidth  < 1080 ) {
     backgroundSize = "HomeBackgroundTablet"
   } else {
     backgroundSize = "HomeBackgroundDesktop"  
@@ -20,8 +20,8 @@ function Home(props) {
 
 
    return (
-    <div classNamne="container">
-      <div className="row align-self-end">
+    <div role="main" classNamne="container">
+      <div className="row" >
         <div className="col-lg-6 MainPageText">
           <div className="">
             <h3 className="altColor"> So, you want to travel to </h3>
@@ -37,8 +37,8 @@ function Home(props) {
         </div>
         <div className="exploreContainer">
           <div className="exploreHover">
-            <Link to="/Destination" className="exploreButton">
-              <h5 className="subHeading exploreButtonText noHover">EXPLORE</h5>
+            <Link to="/FEM-SpaceTourisum/Destination" className="exploreButton">
+              <h5 role="button" className="subHeading exploreButtonText noHover">EXPLORE</h5>
             </Link>
           </div>
         </div>

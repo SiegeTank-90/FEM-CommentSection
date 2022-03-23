@@ -62,7 +62,7 @@ function Technology(props) {
 
 
     return (
-        <div className="container-fluid">
+        <div role="main" className="container-fluid">
         <div className="justify-content-center row pageContainer">
           <h5 className="row m-5 pe-5 pageHeader">03 SPACE LAUNCH 101</h5>
             {Technology}

@@ -58,7 +58,7 @@ function Crew(props) {
   
 
   return (
-    <div className="container-fluid">
+    <div role="main" className="container-fluid">
       <div className="justify-content-center row pageContainer">
         <h5 className="row m-5 pe-5 pageHeader">02 Meet Your Crew</h5>
         {Crew}
