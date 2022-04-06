@@ -6,107 +6,100 @@ import useWindowDimension from "./windowDemension";
 import NewReplyBox from "../createReply";
 
 function CommentBox(props) {
-  function CreateNewReply(userReply) {
-    [username, currentUser, SaveNewReply] = userReply;
-
+  function CreateNewReply() {
     setNewReply(
       <NewReplyBox
-        currentUser={currentUser}
-        username={username}
-        repliedUser={replyFor}
+        currentUser={props.user}
+        message={"Add A Comment . . ."}
+        username={props.username}
+        repliedUser={props.replingTo}
         Save={SaveNewReply}
       />
     );
   }
 
+  // creates new ID and pushes comment into it
   function SaveNewReply(replyMessage) {
+    
     let NewCommentId = props.idkeys.at(props.idkeys.length - 1) + 1;
     props.idkeys.push(NewCommentId);
-    setNewReply(
-      <CommentBox
-        idkeys={props.idkeys}
-        key={NewCommentId}
-        id={NewCommentId}
-        user={currentUser}
-        image={currentUser.image.png}
-        content={replyMessage}
-        replyingTo={props.username}
-        username={currentUser.username}
-        setIsModalVisible={props.setIsModalVisible}
-        setCommentIdKey={props.setCommentIdKey}
-        createdAt={"Today"}
-        score={0}
-      />
-    );
+    
+    props.Array.push({
+      id: NewCommentId,
+      content: replyMessage,
+      createdAt: "< a minute",
+      score: 0,
+      replyingTo: props.username,
+      user: {
+        image: {
+          png: props.user.image.png
+        },
+        username: props.user.username
+      }
+    });
+   
+    props.Update();
+    
+    setNewReply("");
   }
 
   function deleteCommentConfirmation(id) {
     props.setIsModalVisible(true);
     props.setCommentIdKey(id);
    
+
+  }
+
+  function UpdateComment() {
+    setCommentState(
+      <NewReplyBox
+        currentUser={props.user}
+        message={props.content}
+        username={props.username}
+        repliedUser={props.replingTo}
+        Save={EditedMessage}
+      />
+    );
+  }
+
+  function EditedMessage(updatedMesasge) {
+    setCommentState(
+      <CommentBox
+        idkeys={props.idkeys}
+        key={props.id}
+        id={props.id}
+        user={props.user}
+        content={updatedMesasge}
+        createdAt={props.createdAt}
+        score={props.score}
+        username={props.user.username}
+        replyingTo={props.replyingTo}
+        image={props.user.image.png}
+        setIsModalVisible={props.setIsModalVisible}
+        setCommentIdKey={props.setCommentIdKey}
+        Array={props.replies}
+        Update={props.Update}
+      />
+    );
   }
 
   const [NewReply, setNewReply] = useState("");
 
   // Store Elements into an array to pass into NewReply Function
-  let username = props.username;
-  let currentUser = props.user;
-  let replyFor = props.replyingTo;
   let deleteCommentButton = "hidden";
-  let userReply = [username, currentUser, SaveNewReply];
   let repliedUser = undefined;
+  let updateButton = false;
 
   if (props.replyingTo != undefined) {
     repliedUser = "@" + props.replyingTo + " ";
   }
 
-  if (currentUser.username == props.username) {
+  if (props.user.username == props.username) {
     deleteCommentButton = "";
+    updateButton = true;
   }
 
-  let window = useWindowDimension().width;
-
-  if (window < 769) {
-    return (
-      <div>
-        <div className="mb-5">
-          <div className="commentBoxAlt ps-5">
-            <div className="row col-12">
-              <ProfileSection
-                image={props.image}
-                username={props.username}
-                createdAt={props.createdAt}
-              />
-              <p className="textAlternate">
-                <span className="repliedUser">{repliedUser}</span>
-                {props.content}
-              </p>
-            </div>
-
-            <div className="row col-12 position-relative">
-              <div className="col-6">
-                <VoteButton votes={props.score} />
-              </div>
-              <button
-                className={"col-4 delete " + deleteCommentButton}
-                onClick={() => deleteCommentConfirmation(props.id)}
-              >
-                <span className="">
-                  <img className="" src="./images/icon-delete.svg" /> Delete
-                </span>{" "}
-              </button>
-              <div className="col-1">
-                <ReplyAction NewReplyButton={() => CreateNewReply(userReply)} />
-              </div>
-            </div>
-          </div>
-        </div>
-        {NewReply}
-      </div>
-    );
-  }
-
-  return (
+  const [CommentState, setCommentState] = useState(
     <div>
       <div className="mb-5">
         <div className="row justify-content-start ps-5">
@@ -119,6 +112,7 @@ function CommentBox(props) {
                 <div className="col-7">
                   <ProfileSection
                     image={props.image}
+                    user={props.user}
                     username={props.username}
                     createdAt={props.createdAt}
                   />
@@ -134,7 +128,9 @@ function CommentBox(props) {
                 </button>
                 <div className="col-2">
                   <ReplyAction
-                    NewReplyButton={() => CreateNewReply(userReply)}
+                    UpdateComment={UpdateComment}
+                    NewReplyButton={CreateNewReply}
+                    updateButton={updateButton}
                   />
                 </div>
                 <div>
@@ -148,7 +144,11 @@ function CommentBox(props) {
           </div>
         </div>
       </div>
-      {NewReply}
+    </div>
+  );
+  return (
+    <div>
+      <div>{CommentState}</div> <div>{NewReply}</div>
     </div>
   );
 }

@@ -3,8 +3,7 @@ import { ReplyAction } from "./Components/Buttons/replyAction";
 import useWindowDimensions from "./Components/windowDemension";
 
 function NewReply(props) {
-  const [ReplyMessage, SetReplyMessage] = useState("Add A Comment . . .");
-   
+  const [ReplyMessage, SetReplyMessage] = useState(props.message);
 
   const handleChange = (event) => {
     SetReplyMessage(event.target.value);

@@ -178,8 +178,31 @@ button {
   font-weight: 800;
 }
 
+.self {
+  background-color: hsl(238, 40%, 52%);
+  color: #fff;
+  padding: 3px 5px 3px 5px ;
+
+}
+.DesktopView {
+  display: block;
+}
+
+.TabletView {
+  display: none;
+}
+
 
 @media only screen and (max-width: 768px) {
+  .DesktopView {
+    display: none;
+  }
+
+  .TabletView {
+    display: block;
+  }
+
+
   .voteButton {
     display : None
   }

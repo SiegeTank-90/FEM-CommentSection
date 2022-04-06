@@ -3,7 +3,11 @@ import ReplyAction from "./Buttons/replyAction";
 
 function ProfileSection(props) {
 
+  let You = ""
 
+  if (props.user.username != props.username) {
+    You = "hidden"
+  }
  
   return (
     <div className="col-10 row">
@@ -12,6 +16,7 @@ function ProfileSection(props) {
       </div>
       <div className="col-10">
         <span className="textPrimaryBold pe-2">{props.username}</span>
+        <span className={"me-2 self " + You} >You</span>
         <span className="textAlternateBold">{props.createdAt}</span>
       </div>
      </div>
