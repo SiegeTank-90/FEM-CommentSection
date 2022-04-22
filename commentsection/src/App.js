@@ -1,27 +1,41 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import CommentBox from "./Components/commentBox";
 import TabletCommentBox from "./Components/TabletcommentBox";
 import Modal from "./Components/modal";
+
 var idkeys = [1, 2, 3, 4];
 
-function App(props) {
- 
-  const { json } = props;
-  var { currentUser, comments } = json;
+function App() {
+  const [comments, setComments] = useState({});
+  const [currentUser, setcurrentUser] = useState({});
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [commentIdKey, setCommentIdKey] = useState("");
+
+  async function fetchData() {
+    try {
+      const response =  await Axios.get("http://localhost:3000/comments");
+      setComments(response.data);
+      const UserResponse = await Axios.get("http://localhost:3000/currentUser");
+      setcurrentUser(UserResponse.data);
+      console.log(comments.data);
+      console.log(UserResponse.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  fetchData();
+
 
   comments.sort(function (a, b) {
     return a.score > b.score;
   });
 
-
-  
   function loadComments() {
-    console.log(comments[0].replies)
-    let NewComments = comments.map((comments) => mapCommentSection(comments));
     
+    let NewComments = comments.map((comments) => mapCommentSection(comments));
+
     setCommmentSection(NewComments);
   }
 
@@ -47,7 +61,6 @@ function App(props) {
           />
         </div>
         <div className="TabletView">
-          
           <TabletCommentBox
             idkeys={idkeys}
             user={currentUser}
