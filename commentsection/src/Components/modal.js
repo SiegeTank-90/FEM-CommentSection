@@ -1,10 +1,9 @@
 import React from "react";
-import CommentBox from "./commentBox";
 
 function Modal(props) {
   let visablity = "";
 
-  if (props.isVisible == false) {
+  if (props.isVisible === false) {
     visablity = "hidden";
   }
 
@@ -13,9 +12,9 @@ function Modal(props) {
 
     // two filter functions because the json data has different variables for comments
     function filterCommentbyID(comment) {
-      if (comment.id == props.findComment) {
+      if (comment.id === props.findComment) {
         return false;
-      } else if (comment.replies.length != 0) {
+      } else if (comment.replies.length !== 0) {
         let newReplyArray = comment.replies.filter(filterReplyID);
         comment.replies = newReplyArray;
       }
@@ -24,7 +23,7 @@ function Modal(props) {
     }
 
     function filterReplyID(comment) {
-      if (comment.id == props.findComment) {
+      if (comment.id === props.findComment) {
         return false;
       }
       return true;

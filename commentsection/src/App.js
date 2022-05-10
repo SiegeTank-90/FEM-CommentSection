@@ -8,41 +8,40 @@ import Modal from "./Components/modal";
 var idkeys = [1, 2, 3, 4];
 
 function App() {
-  const [comments, setComments] = useState({});
+  const [comments, setComments] = useState([]);
   const [currentUser, setcurrentUser] = useState({});
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [commentIdKey, setCommentIdKey] = useState("");
 
-  async function fetchData() {
-    try {
-      const response =  await Axios.get("http://localhost:3000/comments");
-      setComments(response.data);
-      const UserResponse = await Axios.get("http://localhost:3000/currentUser");
-      setcurrentUser(UserResponse.data);
-      console.log(comments.data);
-      console.log(UserResponse.data);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    async function fetchData() {
+      
+      try {
+         const response = await Axios.get("http://localhost:3000/comments");
+        setComments(response.data);
+        const UserResponse = await Axios.get(
+          "http://localhost:3000/currentUser"
+        );
+        setcurrentUser(UserResponse.data);
+  
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-  fetchData();
+    fetchData();
+  },[]);
+
 
 
   comments.sort(function (a, b) {
     return a.score > b.score;
   });
 
-  function loadComments() {
-    
-    let NewComments = comments.map((comments) => mapCommentSection(comments));
-
-    setCommmentSection(NewComments);
-  }
-
   function mapCommentSection(props) {
-    const startReplies = props.replies.map((reply) => (
-      <div>
+     const startReplies = props.replies.map((reply) => (
+      <div key={reply.id}>
         <div className="DesktopView">
+
           <CommentBox
             idkeys={idkeys}
             user={currentUser}
@@ -57,7 +56,7 @@ function App() {
             setIsModalVisible={setIsModalVisible}
             setCommentIdKey={setCommentIdKey}
             Array={props.replies}
-            Update={() => loadComments()}
+
           />
         </div>
         <div className="TabletView">
@@ -75,7 +74,7 @@ function App() {
             setIsModalVisible={setIsModalVisible}
             setCommentIdKey={setCommentIdKey}
             Array={props.replies}
-            Update={() => loadComments()}
+    
           />
         </div>
       </div>
@@ -98,7 +97,7 @@ function App() {
             setIsModalVisible={setIsModalVisible}
             setCommentIdKey={setCommentIdKey}
             Array={props.replies}
-            Update={() => loadComments()}
+ 
           />
         </div>
         <div className="TabletView">
@@ -116,7 +115,7 @@ function App() {
             setIsModalVisible={setIsModalVisible}
             setCommentIdKey={setCommentIdKey}
             Array={props.replies}
-            Update={() => loadComments()}
+    
           />
         </div>
         <div className="row justify-content-start">
@@ -131,19 +130,16 @@ function App() {
     mapCommentSection(comment)
   );
 
-  const [CommentSection, setCommmentSection] = useState(StartingCommentSection);
-
   return (
     <div className={"container-fluid"}>
-      <Modal
+       <Modal
         isVisible={isModalVisible}
         setIsVisible={setIsModalVisible}
         findComment={commentIdKey}
-        CommentSection={CommentSection}
+        CommentSection={StartingCommentSection}
         allComments={comments}
-        Update={() => loadComments()}
-      />
-      <ul>{CommentSection}</ul>
+        />
+      <ul>{StartingCommentSection}</ul>
     </div>
   );
 }

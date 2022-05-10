@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { ReplyAction } from "./Components/Buttons/replyAction";
 import useWindowDimensions from "./Components/windowDemension";
 
 function NewReply(props) {
   const [ReplyMessage, SetReplyMessage] = useState(props.message);
+
+  console.log('Inside New Reply', props.currentUser )
 
   const handleChange = (event) => {
     SetReplyMessage(event.target.value);
@@ -21,7 +22,7 @@ function NewReply(props) {
             value={ReplyMessage}
             onChange={handleChange}
           />
-          <img className="replyProfileimg" src={props.currentUser.image.png} />
+          <img className="replyProfileimg" alt = "profile Img" src={props.user.image.png} />
           <button
             className="bigReplyButton"
             onClick={() => props.Save(ReplyMessage)}
@@ -35,7 +36,7 @@ function NewReply(props) {
   return (
     <div className="ps-5">
       <div className="replyBox mb-5">
-        <img className="replyProfileimg" src={props.currentUser.image.png} />
+        <img className="replyProfileimg" alt = "profile Img"  src={props.user.image.png} />
         <textarea
           type="text"
           maxLength="256"

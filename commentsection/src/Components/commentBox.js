@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import VoteButton from "./Buttons/voteButton.js";
 import ProfileSection from "./profileSection.js";
 import ReplyAction from "./Buttons/replyAction.js";
-import useWindowDimension from "./windowDemension";
 import NewReplyBox from "../createReply";
 
 function CommentBox(props) {
+
   function CreateNewReply() {
+    console.log('inside CreateNewReply', props.user)
     setNewReply(
       <NewReplyBox
         currentUser={props.user}
@@ -40,7 +41,7 @@ function CommentBox(props) {
    
     props.Update();
     
-    setNewReply("");
+    setNewReply();
   }
 
   function deleteCommentConfirmation(id) {
@@ -90,7 +91,7 @@ function CommentBox(props) {
   let repliedUser = undefined;
   let updateButton = false;
 
-  if (props.replyingTo != undefined) {
+  if (props.replyingTo !== undefined) {
     repliedUser = "@" + props.replyingTo + " ";
   }
 
